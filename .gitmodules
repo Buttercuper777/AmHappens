@@ -1,9 +1,9 @@
-[submodule "whisper/whisper.cpp"]
-	path = whisper/whisper.cpp
-	url = https://github.com/ggerganov/whisper.cpp.git
 [submodule "frontend"]
 	path = frontend
 	url = https://github.com/Buttercuper777/AmHappensFront
 [submodule "backend"]
 	path = backend
 	url = https://github.com/Buttercuper777/AmHappensBack
+[submodule "whisper/sources"]
+	path = whisper/sources
+	url = https://github.com/ggerganov/whisper.cpp.git

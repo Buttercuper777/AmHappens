@@ -15,8 +15,8 @@ check_success "initializing submodules"
 
 # Step 2: Update all submodules to the latest version
 echo "⚪️ Updating submodules..."
-git submodule update --remote
-check_success "updating submodules"
+git submodule sync  # Применит изменения из .gitmodules
+git submodule update --remote --recursive
 
 # Step 3: Create a virtual environment for the backend
 echo "⚪️ Creating virtual environment for backend..."
@@ -43,7 +43,7 @@ cd ..
 
 # Step 7: Build the whisper.cpp library if necessary
 echo "⚪️ Checking if whisper.cpp needs to be built..."
-cd whisper/whisper.cpp
+cd whisper/sources
 
 # Check if main or whisper-cli already exists
 if [ ! -f "main" ] && [ ! -f "whisper-cli" ]; then
@@ -66,3 +66,4 @@ echo "🟢 Project initialization completed successfully!"
 
 # Deactivate the virtual environment
 deactivate
+
